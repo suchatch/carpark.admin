@@ -1,12 +1,19 @@
-import React from "react";
-import AdminHoc from "./AdminHoc";
+import React, { useEffect } from "react";
+import AdminHoc from "../../AdminHoc";
+import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
-export default function Dashboard({}: Props) {
+export default function InOut({}: Props) {
+  const navigate = useNavigate();
+
+  useEffect(()=> {
+
+  },[])
+
   return (
 
-      <AdminHoc contentTitle="Dashboard">
+      <AdminHoc contentTitle="InOut">
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-6">

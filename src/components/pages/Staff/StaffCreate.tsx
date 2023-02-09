@@ -1,12 +1,10 @@
-import React from "react";
-import AdminHoc from "./AdminHoc";
+import React from 'react'
+import AdminHoc from '../../AdminHoc'
+type Props = {}
 
-type Props = {};
-
-export default function Dashboard({}: Props) {
+export default function StaffCreate({}: Props) {
   return (
-
-      <AdminHoc contentTitle="Dashboard">
+    <AdminHoc contentTitle="Staff Create">
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-6">
@@ -26,5 +24,5 @@ export default function Dashboard({}: Props) {
           </div>
         </div>
       </AdminHoc>
-  );
+  )
 }

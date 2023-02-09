@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 type Props = {};
 
 export default function AdminSidebar({}: Props) {
@@ -7,7 +7,7 @@ export default function AdminSidebar({}: Props) {
     <>
       <aside className="main-sidebar sidebar-dark-primary elevation-4">
         {/* Brand Logo */}
-        <a href="index3.html" className="brand-link">
+        <Link to="/" className="brand-link">
           <img
             src="dist/img/AdminLTELogo.png"
             alt="AdminLTE Logo"
@@ -15,7 +15,7 @@ export default function AdminSidebar({}: Props) {
             style={{ opacity: ".8" }}
           />
           <span className="brand-text font-weight-light">AdminLTE 3</span>
-        </a>
+        </Link>
         {/* Sidebar */}
         <div className="sidebar">
           {/* Sidebar user panel (optional) */}
@@ -69,10 +69,10 @@ export default function AdminSidebar({}: Props) {
                 </a>
                 <ul className="nav nav-treeview">
                   <li className="nav-item">
-                    <a href="./index.html" className="nav-link">
+                    <Link to="/staff" className="nav-link">
                       <i className="far fa-circle nav-icon" />
                       <p>พนักงาน</p>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <a href="./index2.html" className="nav-link">
