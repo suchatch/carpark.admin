@@ -14,7 +14,7 @@ export default function AdminSidebar({}: Props) {
             className="brand-image img-circle elevation-3"
             style={{ opacity: ".8" }}
           />
-          <span className="brand-text font-weight-light">AdminLTE 3</span>
+          <span className="brand-text font-weight-light">{import.meta.env.VITE_PROJECT_NAME}</span>
         </Link>
         {/* Sidebar */}
         <div className="sidebar">
@@ -34,21 +34,7 @@ export default function AdminSidebar({}: Props) {
             </div>
           </div>
           {/* SidebarSearch Form */}
-          <div className="form-inline">
-            <div className="input-group" data-widget="sidebar-search">
-              <input
-                className="form-control form-control-sidebar"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <div className="input-group-append">
-                <button className="btn btn-sidebar">
-                  <i className="fas fa-search fa-fw" />
-                </button>
-              </div>
-            </div>
-          </div>
+     
           {/* Sidebar Menu */}
           <nav className="mt-2">
             <ul
@@ -68,13 +54,19 @@ export default function AdminSidebar({}: Props) {
                   </p>
                 </a>
                 <ul className="nav nav-treeview">
+                <li className="nav-item">
+                    <Link to="/inout" className="nav-link">
+                      <i className="far fa-circle nav-icon" />
+                      <p>รายการเข้าออก</p>
+                    </Link>
+                  </li>
                   <li className="nav-item">
                     <Link to="/staff" className="nav-link">
                       <i className="far fa-circle nav-icon" />
                       <p>พนักงาน</p>
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a href="./index2.html" className="nav-link">
                       <i className="far fa-circle nav-icon" />
                       <p>สาขา</p>
@@ -85,7 +77,7 @@ export default function AdminSidebar({}: Props) {
                       <i className="far fa-circle nav-icon" />
                       <p>อาคาร</p>
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
  

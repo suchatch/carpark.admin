@@ -1,9 +1,25 @@
-import React from "react";
-import AdminHoc from "./AdminHoc";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { authSelector } from "../../../store/auth/authSlice";
+import AdminHoc from "../../AdminHoc";
 
 type Props = {};
 
 export default function Dashboard({}: Props) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { user } = useSelector(authSelector);
+
+  useEffect(() => {
+    console.log(user)
+    if (!user) {
+      navigate("/login");
+    }
+
+  }, [user, dispatch]);
+
   return (
 
       <AdminHoc contentTitle="Dashboard">

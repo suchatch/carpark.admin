@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
-
+import { login, reset } from '../store/auth/authSlice'
+import {ThunkDispatch} from "@reduxjs/toolkit";
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 type Props = {};
 
 export default function AdminLogin({}: Props) {
@@ -11,10 +14,28 @@ export default function AdminLogin({}: Props) {
 
   const { username, password } = formData;
 
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state:any) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+
+    if (isSuccess || user) {
+      navigate("/");
+    }
+
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
+  
 
   const onChange = (e: any) => {
-    console.log(e.target.value)
+
     setFormData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -28,9 +49,7 @@ export default function AdminLogin({}: Props) {
       password,
     };
 
-    console.log(userData)
-
-    // dispatch(login(userData));
+    dispatch(login(userData) as any);
   };
   return (
     <div>

@@ -1,15 +1,24 @@
 import React, { useEffect } from "react";
 import AdminHoc from "../../AdminHoc";
 import { useNavigate } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
+import { authSelector } from "../../../store/auth/authSlice";
 type Props = {};
 
 export default function InOut({}: Props) {
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  useEffect(()=> {
+  const { user } = useSelector(authSelector);
 
-  },[])
+  useEffect(() => {
+    console.log(user)
+    if (!user) {
+      navigate("/login");
+    }
+
+  }, [user, dispatch]);
 
   return (
 

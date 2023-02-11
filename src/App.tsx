@@ -1,6 +1,4 @@
-import React from "react";
-import AdminHoc from "./components/AdminHoc";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/pages/Dashboard/DashboardScreen";
 import InOutScreen from "./components/pages/InOut/InOutScreen";
 import { ToastContainer } from "react-toastify";
 type Props = {};
