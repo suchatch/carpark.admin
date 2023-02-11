@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AdminHoc from "../../AdminHoc";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { authSelector } from "../../../store/auth/authSlice";
+import { authSelector } from "../../../store/features/auth/authSlice";
 type Props = {};
 
 export default function InOut({}: Props) {

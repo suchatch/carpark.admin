@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { authSelector } from "../../../store/auth/authSlice";
+import { authSelector } from "../../../store/features/auth/authSlice";
 import AdminHoc from "../../AdminHoc";
 
 type Props = {};
